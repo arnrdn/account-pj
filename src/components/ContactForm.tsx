@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, SyntheticEvent, useState } from 'react';
+import { FC, SyntheticEvent, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid';
 import { addContact } from '../redux/contact/contact';

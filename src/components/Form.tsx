@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { ChangeEvent, FC, useState } from 'react';
+import { FC, useState } from 'react';
 
 const Form: FC = () => {
   const [email, setEmail] = useState<string>('');
