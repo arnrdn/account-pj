@@ -35,11 +35,15 @@ const Contacts: FC = () => {
   };
 
   return isAuth ? (
-    <div>
-      Welcome
+    <div className="contacts">
       <ContactForm />
       <ContactsList />
-      <button onClick={handleExit}>Выйти</button>
+      <button
+        className="btn contacts__btn contacts__exit-btn"
+        onClick={handleExit}
+      >
+        Выйти
+      </button>
     </div>
   ) : (
     <Navigate to="/login" />

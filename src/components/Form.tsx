@@ -22,27 +22,36 @@ const Form: FC = () => {
 
   return (
     <form className="login__form">
-      <label htmlFor="email">
+      <h1 className="heading-1">Войдите в аккаунт</h1>
+      <label className="label" htmlFor="email">
         Почта:
-        <input
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-          type="email"
-          name="email"
-          id="email"
-        />
       </label>
-      <label htmlFor="pass">
+      <input
+        className="input"
+        onChange={(e) => setEmail(e.target.value)}
+        value={email}
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Введите свою почту..."
+      />
+
+      <label className="label" htmlFor="pass">
         Пароль:
-        <input
-          onChange={(e) => setPass(e.target.value)}
-          value={pass}
-          type="password"
-          name="pass"
-          id="pass"
-        />
       </label>
-      <button onClick={(e) => handleSubmit(e)}>Войти</button>
+      <input
+        className="input"
+        onChange={(e) => setPass(e.target.value)}
+        value={pass}
+        type="password"
+        name="pass"
+        id="pass"
+        placeholder="Введите свой пароль..."
+      />
+
+      <button className="btn login__btn" onClick={(e) => handleSubmit(e)}>
+        Войти
+      </button>
     </form>
   );
 };

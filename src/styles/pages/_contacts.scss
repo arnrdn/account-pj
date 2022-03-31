@@ -1,0 +1,15 @@
+.contacts {
+  @include page-bg;
+
+  width: 80%;
+  max-width: 800px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.contacts__exit-btn {
+  flex-basis: 5%;
+}

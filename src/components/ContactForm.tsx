@@ -23,25 +23,38 @@ const ContactForm: FC = () => {
   };
 
   return (
-    <div>
-      <form>
-        <input
-          onChange={(e) => setName(e.target.value)}
-          value={name}
-          type="text"
-          placeholder="Имя"
-        />
-        <input
-          onChange={(e) => setNumber(e.target.value)}
-          value={number}
-          type="text"
-          placeholder="Номер телефона"
-        />
-        <button onClick={(e) => handleSubmit(e)} type="button">
-          Добавить
-        </button>
-      </form>
-    </div>
+    <form className="contacts__form">
+      <h1 className="heading-1">Добавьте контакт</h1>
+      <label htmlFor="name" className="label">
+        Имя:
+      </label>
+      <input
+        className="input"
+        onChange={(e) => setName(e.target.value)}
+        name="name"
+        value={name}
+        type="text"
+        placeholder="Введите имя..."
+      />
+      <label htmlFor="number" className="label">
+        Номер:
+      </label>
+      <input
+        className="input"
+        onChange={(e) => setNumber(e.target.value)}
+        name="number"
+        value={number}
+        type="text"
+        placeholder="Введите номер телефона..."
+      />
+      <button
+        className="btn contacts__btn"
+        onClick={(e) => handleSubmit(e)}
+        type="button"
+      >
+        Добавить
+      </button>
+    </form>
   );
 };
 

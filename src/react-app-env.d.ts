@@ -12,6 +12,10 @@ interface IPayload {
   number: string;
 }
 
+interface IEditPayload {
+  id: string;
+}
+
 interface IAction {
   type: string;
   payload: IPayload;
