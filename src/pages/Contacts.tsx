@@ -1,21 +1,35 @@
 import { useNavigate, Navigate } from 'react-router-dom';
 import { FC, useEffect, useState } from 'react';
+import ContactForm from '../components/ContactForm';
+import ContactsList from '../components/ContactsList';
 
 const Contacts: FC = () => {
-  const [isAuth, setAuth] = useState(true);
+  const [isAuth, setAuth] = useState<boolean>(false);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    const auth = localStorage.getItem('isAuth');
-    const parsedAuth: object = JSON.parse(auth);
-    if (parsedAuth.auth === true) {
-      setAuth(true);
-    }
-  });
+    const isLogin: string = localStorage.getItem('isAuth') || '{}';
 
-  const handleExit = () => {
-    localStorage.removeItem('isAuth');
+    interface IparsedLogin {
+      auth: boolean;
+    }
+
+    const parsedLogin: IparsedLogin = JSON.parse(isLogin);
+
+    if (parsedLogin.auth === true) {
+      setAuth(true);
+      navigate('/');
+    }
+  }, [navigate, setAuth]);
+
+  const handleExit = (): void => {
+    localStorage.setItem(
+      'isAuth',
+      JSON.stringify({
+        auth: false,
+      })
+    );
     setAuth(false);
     navigate('/login');
   };
@@ -23,6 +37,8 @@ const Contacts: FC = () => {
   return isAuth ? (
     <div>
       Welcome
+      <ContactForm />
+      <ContactsList />
       <button onClick={handleExit}>Выйти</button>
     </div>
   ) : (

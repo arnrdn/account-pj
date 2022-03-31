@@ -1,13 +1,13 @@
 import { useNavigate } from 'react-router-dom';
-import { FC, useState } from 'react';
+import { ChangeEvent, FC, useState } from 'react';
 
 const Form: FC = () => {
-  const [email, setEmail] = useState('');
-  const [pass, setPass] = useState('');
+  const [email, setEmail] = useState<string>('');
+  const [pass, setPass] = useState<string>('');
 
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.SyntheticEvent) => {
+  const handleSubmit = (e: React.SyntheticEvent): void => {
     e.preventDefault();
     if (email === 'login@gmail.com' && pass === 'password') {
       localStorage.setItem(
@@ -16,7 +16,7 @@ const Form: FC = () => {
           auth: true,
         })
       );
-      navigate('/contacts');
+      navigate('/');
     }
   };
 
