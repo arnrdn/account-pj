@@ -14,7 +14,7 @@
 
 ## Live Demo
 
-- [Здесь вы можете посмотреть на "живую" версию приложения!](https://poetic-marshmallow-377eb0.netlify.app/)
+- [Здесь вы можете посмотреть на "живую" версию приложения!](https://flourishing-sunburst-b77a44.netlify.app)
 
 ## Getting Started
 
