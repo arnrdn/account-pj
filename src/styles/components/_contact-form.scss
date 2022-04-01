@@ -1,0 +1,16 @@
+.contacts__form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 3rem;
+}
+
+.contacts__btn {
+  align-self: flex-start;
+  font-size: 1.7rem;
+  justify-self: flex-end;
+  &:hover {
+    filter: brightness(1.1);
+  }
+}

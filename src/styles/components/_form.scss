@@ -1,0 +1,43 @@
+.login__form {
+  @include page-bg;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.heading-1 {
+  font-size: 2.3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.label {
+  font-size: 1.6rem;
+  margin-bottom: 0.7rem;
+}
+
+.input {
+  margin-bottom: 2rem;
+  padding: 0.7rem;
+  border-radius: $border-radius;
+  border: 1px solid #bebebe;
+}
+
+.login__btn {
+  align-self: center;
+  font-size: 1.7rem;
+  justify-self: center;
+}
+
+.btn {
+  cursor: pointer;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: $border-radius;
+  border: none;
+  background-color: $color-primary;
+  transition: all 0.2s;
+  &:hover {
+    filter: brightness(1.1);
+  }
+}
