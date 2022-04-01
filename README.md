@@ -14,7 +14,7 @@
 
 ## Live Demo
 
-- [Click here to see a live version on Netlify!](https://rdnrn.github.io/nexter-course-pj/)
+- [Здесь вы можете посмотреть на "живую" версию приложения!](https://poetic-marshmallow-377eb0.netlify.app/)
 
 ## Getting Started
 
