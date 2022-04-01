@@ -85,6 +85,13 @@ body {
   border-radius: 0.5rem;
   border: none;
   background-color: #3787ff;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  -webkit-filter: brightness(1.1);
+          filter: brightness(1.1);
 }
 
 .contacts {
@@ -95,23 +102,26 @@ body {
   border-radius: 1rem;
   width: 80%;
   max-width: 800px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   gap: 3rem;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 
 .contacts__exit-btn {
-  -ms-flex-preferred-size: 5%;
-      flex-basis: 5%;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+}
+
+.contacts__exit-btn:hover {
+  -webkit-filter: brightness(1.1);
+          filter: brightness(1.1);
 }
 
 .contacts__form {
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -127,6 +137,11 @@ body {
       align-self: flex-start;
   font-size: 1.7rem;
   justify-self: flex-end;
+}
+
+.contacts__btn:hover {
+  -webkit-filter: brightness(1.1);
+          filter: brightness(1.1);
 }
 
 .list {

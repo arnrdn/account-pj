@@ -1,33 +1,20 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { FC } from 'react';
-import { deleteContact } from '../redux/contact/contact';
+import ContactItem from './ContactItem';
 
 const ContactsList: FC = () => {
   const contacts = useSelector((state: Contact[]) => state);
 
-  const dispatch = useDispatch();
-  const deleteFromContact = (contact: Contact) => {
-    dispatch(deleteContact(contact));
-  };
+  const renderList = contacts.map((contact) => (
+    <ContactItem key={contact.id} contact={contact} />
+  ));
 
   return (
     <ul className="list">
       {contacts.length > 0 ? (
-        contacts.map((contact) => (
-          <li className="list__item" id={contact.id}>
-            <div className="list__info">{contact.name}</div>
-            <div className="list__info">{contact.number}</div>
-            <button
-              className="list__btn"
-              type="button"
-              onClick={() => deleteFromContact(contact)}
-            >
-              &#10005;
-            </button>
-          </li>
-        ))
+        renderList
       ) : (
-        <h2 className="heading-2">No contacts yet!</h2>
+        <h2 className="heading-2">Список пуст</h2>
       )}
     </ul>
   );

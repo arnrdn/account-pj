@@ -45,7 +45,7 @@ const ContactForm: FC = () => {
         name="number"
         value={number}
         type="text"
-        placeholder="Введите номер телефона..."
+        placeholder="8(999)123-45-67"
       />
       <button
         className="btn contacts__btn"
